@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -34,5 +35,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation hamcrest.lib
+
+    implementation room.lib
+    kapt room.compiler
+    implementation room.rxjava
+    testImplementation room.test
+
+    implementation lifecycle.viewmodel
+    implementation lifecycle.livedata
+    testImplementation lifecycle.testhelper
+    kapt lifecycle.kotlinCompiler
+
+    implementation timber.lib
+
+    implementation rxjava.lib
+    implementation rxjava.android
 
 }
