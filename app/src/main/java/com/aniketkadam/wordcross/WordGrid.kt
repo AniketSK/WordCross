@@ -1,27 +1,23 @@
 package com.aniketkadam.wordcross
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.annotation.WorkerThread
+
+class WordGrid @WorkerThread constructor(val rows: Int, val columns: Int) {
+    // Represent this with a two dimensional grid of letters
+    private val allowedCharacters = ('A'..'Z')
+    val letterGrid: List<List<Char>>? = generateLetterGrid()
+
+    private fun generateLetterGrid(): List<List<Char>> =
+        List(3) { List(3) { allowedCharacters.random() } }
 
 
-class WordGrid : Fragment() {
+    // What if we had a single string instead of a grid of characters?
+    // The most reasonable way to represent a grid is a goddamn recyclerview =/
+    // The recyclerview would then need a list of characters instead of a single string.
+    // Not so, the list given could be a
 
-    private lateinit var viewModel: WordGridViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.word_grid_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WordGridViewModel::class.java)
-    }
+    // Possible to iterate over a string as well if jetpack compose was there.
+    // row number = index % rownum
+    // column number = index % colnum
 
 }
