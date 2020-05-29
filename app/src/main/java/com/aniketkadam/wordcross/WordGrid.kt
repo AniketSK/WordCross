@@ -5,9 +5,8 @@ import androidx.annotation.WorkerThread
 class WordGrid @WorkerThread constructor(val rows: Int, val columns: Int) {
     // Represent this with a two dimensional grid of letters
     private val allowedCharacters = ('A'..'Z')
-    val letterGrid: List<Char> = generateLetterGrid()
 
-    private fun generateLetterGrid(): List<Char> =
+    fun generateLetterGrid(): List<Char> =
         List(rows * columns) { allowedCharacters.random() }
 
     // What if we had a single string instead of a grid of characters?
