@@ -24,7 +24,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+//
+//    buildFeatures {
+//        compose true
+//    }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+//    composeOptions {
+//        kotlinCompilerExtensionVersion "0.1.0-dev11"
+//    }
 }
 
 dependencies {
@@ -56,5 +72,12 @@ dependencies {
 
     implementation rxjava.lib
     implementation rxjava.android
+
+    implementation guava.lib
+    // Compose
+//    implementation jetpackCompose.framework
+//    implementation jetpackCompose.tooling
+//    implementation jetpackCompose.layout
+//    implementation jetpackCompose.material
 
 }
