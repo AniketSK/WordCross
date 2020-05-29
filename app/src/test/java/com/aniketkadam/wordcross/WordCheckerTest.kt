@@ -9,7 +9,7 @@ class WordCheckerTest {
 
     private val wc = WordChecker(object : WordDataLoader {
         override fun loadData(): InputStream =
-            ClassLoader.getSystemResourceAsStream("unicorn.txt")!!
+            getTextInFile("unicorn.txt")!!
     })
 
     @Test

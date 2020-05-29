@@ -20,7 +20,7 @@ class BloomFilterMaker {
             0.0001
         )
 
-        ClassLoader.getSystemResourceAsStream("combined.txt")!!.bufferedReader().readLines()
+        getTextInFile("combined.txt")!!.bufferedReader().readLines()
             .forEach {
                 filter.put(it)
             }
