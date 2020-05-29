@@ -21,5 +21,6 @@ class WordCheckerTest {
     @Test
     fun `strings that are not words are correctly detected as not present`() {
         assertThat(wc.isWord("SLZK"), equalTo(false))
+        assertThat(wc.isWord("JeremyBearimy"), equalTo(false))
     }
 }
