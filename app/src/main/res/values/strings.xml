@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WordCross</string>
+    <string name="title_activity_word_grid">Word Grid</string>
 </resources>
