@@ -41,6 +41,7 @@ android {
 
     composeOptions {
         kotlinCompilerVersion = "$versions.kotlinComposeExt"
+        kotlinCompilerExtensionVersion "0.1.0-dev10"
     }
 }
 
@@ -81,7 +82,8 @@ dependencies {
     implementation jetpackCompose.layout
     implementation jetpackCompose.material
     implementation jetpackCompose.framework
-    implementation jetpackCompose.tooling
+
     implementation jetpackCompose.runtime
+    implementation jetpackCompose.tooling
 
 }
